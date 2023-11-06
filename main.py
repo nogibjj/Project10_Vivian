@@ -3,7 +3,6 @@ from lib.lib import (
     read_dataset,
     describe,
     median_income_category,
-    append_to_report,
     execute_sql_query
 )
 
