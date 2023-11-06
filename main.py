@@ -1,39 +1,50 @@
-import pandas as pd
-import matplotlib.pyplot as plt
+from housinglib.lib import (
+    initiate_spark_session,
+    read_dataset,
+    describe,
+    median_income_category,
+    append_to_report,
+    execute_sql_query
+)
 
-def f():
-    df=pd.read_csv("california_housing_train.csv")
+def run_data_analysis():
+    # Start Spark session
+    spark = initiate_spark_session("California Housing Data Analysis")
 
-    print(df.shape)
-    print(df.shape[0])
-    print(df.describe())
-
-    # Bottom 3 house price
-    sorted_by_value=df.sort_values('median_house_value', ascending = True)[:3]
-    # Calculate the median/mean/standard deviation for the 2022 numbers
-    median=df['median_house_value'].dropna().median()
-    mean=df['median_house_value'].dropna().mean()
-    sd=df['median_house_value'].dropna().std()
-    print("Bottom 3 house price: "+str(sorted_by_value))
-    print("median is: "+ str(median))
-    print("mean is: "+str(mean))
-    print("standard deviation is: "+str(sd))
-
-    # Plot a histogram for the house value
-    data = df['median_house_value'].dropna()
-
-    # Create histogram
-    plt.hist(data, bins=5, edgecolor="k")
-
-    # Add labels and title
-    plt.xlabel('median_house_value')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of median house price')
-
-    # Show plot
-    plt.show()
-    return 0
+    # Path to the housing dataset
+    data_file_path = "california_housing_train.csv"
     
+    # Read the housing dataset into a Spark DataFrame
+    housing_data = read_dataset(spark, data_file_path)
+    
+    # Get a descriptive statistics report of the data
+    describe(housing_data)
+    
+    # Transform the data by categorizing the 'median_income'
+    transformed_data = median_income_category(housing_data)
+    
+    # Register the DataFrame as a temporary SQL view
+    transformed_data.createOrReplaceTempView("housing_data_view")
+    
+    # Define a SQL query to calculate the average house value by income category
+    sql_query = """
+        SELECT IncomeCategory, AVG(median_house_value) AS AverageHouseValue
+        FROM housing_data_view
+        GROUP BY IncomeCategory
+        ORDER BY AverageHouseValue DESC
+    """
+    
+    # Execute the SQL query and get the result
+    query_result = execute_sql_query(spark, sql_query, "Average House Value by Income Category")
+
+    # Display the query result in the console
+    query_result.show()
+    
+    # Optionally, save the query result to a CSV file
+    # query_result.write.format("csv").save("output/query_result.csv")
+
+    # Stop the Spark session
+    spark.stop()
 
 if __name__ == "__main__":
-    f()
+    run_data_analysis()
