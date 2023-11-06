@@ -1,6 +1,6 @@
 # README [![CI](https://github.com/nogibjj/Project4_Vivian/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/Project4_Vivian/actions/workflows/ci.yml)
 
-This repository features the materials for Mini-Project 4. It includes: 
+This repository features the materials for Mini-Project 10. It includes: 
 - A Makefile
 - A Dockerfile
 - A foundational set of libraries for development operations and web applications
@@ -28,10 +28,6 @@ The dataset contains the following attributes, all of which are of type double:
 ## Preparation 
 1. open the project in codespaces
 2. container built and virtual environment to activated through requirements.txt
-3. passed all 3 versions python build
-
-<img width="1313" alt="Screen Shot 2023-09-21 at 5 14 27 PM" src="https://github.com/nogibjj/Project4_Vivian/assets/143654445/098da71b-ffa9-490f-83a8-3e37abef63f1">
-
 
 ## Check Format & Errors
 1. make format
@@ -45,7 +41,6 @@ The dataset contains the following attributes, all of which are of type double:
 
 
 ## functionalities
-In lib/lib.py
 - Initialization: Starts a new Spark session.
 - Data Loading: Reads the california_housing_train.csv dataset with predefined schema.
 - Data Description: Generates a statistical summary of the data.
