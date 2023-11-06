@@ -1,4 +1,4 @@
-# README [![CI](https://github.com/nogibjj/Project4_Vivian/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/Project4_Vivian/actions/workflows/ci.yml)
+# README [![CI](https://github.com/nogibjj/Project10_Vivian/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/Project10_Vivian/actions/workflows/ci.yml)
 
 This repository features the materials for Mini-Project 10. It includes: 
 - A Makefile
