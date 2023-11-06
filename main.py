@@ -1,4 +1,4 @@
-from housinglib.lib import (
+from lib.lib import (
     initiate_spark_session,
     read_dataset,
     describe,
