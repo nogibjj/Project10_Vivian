@@ -33,11 +33,12 @@ The dataset contains the following attributes, all of which are of type double:
 1. make format
 2. make lint
 
-<img width="507" alt="Screen Shot 2023-09-21 at 5 08 39 PM" src="https://github.com/nogibjj/Project4_Vivian/assets/143654445/3f7de37e-b25b-4732-911c-6eceedb7b046">
+<img width="579" alt="Screen Shot 2023-11-05 at 10 13 28 PM" src="https://github.com/nogibjj/Project10_Vivian/assets/143654445/14d59db7-6014-4ed9-a7c1-6faff592df71">
+
 
 4. make test
 
-<img width="1071" alt="Screen Shot 2023-09-21 at 5 08 28 PM" src="https://github.com/nogibjj/Project4_Vivian/assets/143654445/6a30d369-56af-4fc9-b6e0-96517d80b08b">
+<img width="702" alt="Screen Shot 2023-11-05 at 10 13 01 PM" src="https://github.com/nogibjj/Project10_Vivian/assets/143654445/9ee9d1c7-df00-4c29-872e-4f66e69aac45">
 
 
 ## functionalities
@@ -53,4 +54,4 @@ The transformation and queries yielded the following results:
 - A summary of the descriptive statistics.
 - A preview of the data with the new `IncomeCategory` column.
 - The count of houses per income category.
-Detailed queris and outputs are shown in report.md. 
+Detailed queries and outputs are shown in [report.md](https://github.com/nogibjj/Project10_Vivian/blob/c7abbfa538c86c8cb0e3fd0cc29f6a1b16a29c9e/report.md)
