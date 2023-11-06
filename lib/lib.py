@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, when, format_number
+from pyspark.sql.functions import col, when
 from pyspark.sql.types import StructType, StructField, DoubleType
 
 REPORT_FILE = "report.md"
