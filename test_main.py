@@ -45,4 +45,3 @@ def test_data_transform(spark_session: SparkSession):
 if __name__ == "__main__":
     # Directly invoking pytest.main() to run tests in this file
     pytest.main([__file__])
-
